@@ -34,4 +34,13 @@ public class MemberServiceUnitTest {
         assertEquals(msrv.saveMember(m), true);
     }
 
+    @Test
+    public void loginMember() throws Exception {
+        Member m = new Member();
+        m.setUserid("abc123");
+        m.setPasswd("987xyz");
+
+        assertEquals(msrv.loginMember(m), true);
+    }
+
 }
