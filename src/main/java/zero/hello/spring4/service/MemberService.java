@@ -9,4 +9,6 @@ public interface MemberService {
 
     boolean loginMember(Member m);
 
+    Member readOneMember(String userid);
+
 }
