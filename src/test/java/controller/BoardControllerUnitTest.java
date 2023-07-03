@@ -49,5 +49,16 @@ public class BoardControllerUnitTest {
         System.out.println(mvcResult.getModelAndView());
     }
 
+    @Test
+    public void viewTest() throws Exception {
+        MvcResult mvcResult = mockMvc.perform(
+                        get("/board/view")
+                        .param("bno","450"))
+                .andExpect(status().isOk())
+                .andReturn();
+
+        System.out.println(mvcResult.getModelAndView());
+    }
+
 
 }
