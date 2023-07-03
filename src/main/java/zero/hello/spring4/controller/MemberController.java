@@ -23,7 +23,7 @@ public class MemberController {
     private MemberService msrv;
 
     @RequestMapping(value = "/member/join" , method = RequestMethod.GET)
-    public String join(Model m) {
+    public String join(Model m, HttpSession sess) {
 
 
         logger.info("member/join 호출!");
@@ -66,7 +66,7 @@ public class MemberController {
     public String myinfo(Model m, HttpSession sess) {
         logger.info("member/myinfo 호출!");
 
-        // 세션객체가 없을 경우 로그인 페이지로 이동 - aop 로 처리
+        // 세션객체가 없을 경우 로그인 페이지로 이동 -> aop 로 처리
         //if (sess.getAttribute("member") == null)
         //    return "redirect:/member/login";
 
